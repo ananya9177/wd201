@@ -6,13 +6,13 @@ const { all, markAsComplete, add, overdue, dueToday, dueLater } = todoList();
 describe("Todo List Test Suite", () => {
   beforeAll(() => {
     // Seed the test data
-    const today = new Date();
+    const todayss = new Date();
     const day_ = 60 * 60 * 24 * 1000;
     [
       {
         title: "Buy curd",
         completed: false,
-        dueDate: new Date(today.getTime() - 2 * day_).toLocaleDateString(
+        dueDate: new Date(todayss.getTime() - 2 * day_).toLocaleDateString(
           "en-CA"
         ),
       },
@@ -24,7 +24,7 @@ describe("Todo List Test Suite", () => {
       {
         title: "Submit PR",
         completed: false,
-        dueDate: new Date(today.getTime() + 2 * day_).toLocaleDateString(
+        dueDate: new Date(todayss.getTime() + 2 * day_).toLocaleDateString(
           "en-CA"
         ),
       },
