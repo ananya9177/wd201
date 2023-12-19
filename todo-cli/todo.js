@@ -3,7 +3,7 @@ const todoList = () => {
 		const add = (todoItem) => {
 		all.push(todoItem)
 		}
-		const markAsComplete = (index) => {
+		const markAsCompleted = (index) => {
 		all[index].completed = true
 		}
 		
@@ -26,7 +26,7 @@ const todoList = () => {
 		return {
 		all,
 		add,
-		markAsComplete,
+		markAsCompleted,
 		overdue,
 		dueToday,
 		dueLater,
