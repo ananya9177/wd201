@@ -71,7 +71,7 @@ describe("testing",function(){
     const dueLaterItems_ = await db.Todo.dueLater();
     const aTodo_ = dueLaterItems_[0];
     expect(aTodo_.completed).toBe(false);
-    const displayValue_ = aTodo.displayableString();
+    const displayValue_ = aTodo_.displayableString();
     expect(displayValue_).toBe(
       `${aTodo_.id}. [ ] ${aTodo_.title} ${aTodo_.dueDate}`,
     );
