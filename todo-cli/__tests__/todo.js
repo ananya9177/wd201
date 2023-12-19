@@ -1,20 +1,18 @@
-//todo.js
-let todoList = require("../todo");
+// todo-test.js
+const todoListModule = require("../todo");
 
-const { all, markAsComplete, add, overdue, dueToday, dueLater } = todoList();
+const { all, markAsComplete, add, overdue, dueToday, dueLater } = todoListModule();
 
 describe("Todo List Test Suite", () => {
   beforeAll(() => {
     // Seed the test data
-    const todayss = new Date();
-    const dayss = 60 * 60 * 24 * 1000;
+    const currentDate = new Date();
+    const oneDayMilliseconds = 60 * 60 * 24 * 1000;
     [
       {
         title: "Buy curd",
         completed: false,
-        dueDate: new Date(todayss.getTime() - 2 * dayss).toLocaleDateString(
-          "en-CA"
-        ),
+        dueDate: new Date(currentDate.getTime() - 2 * oneDayMilliseconds).toLocaleDateString("en-CA"),
       },
       {
         title: "Do workout",
@@ -24,12 +22,11 @@ describe("Todo List Test Suite", () => {
       {
         title: "Submit PR",
         completed: false,
-        dueDate: new Date(todayss.getTime() + 2 * dayss).toLocaleDateString(
-          "en-CA"
-        ),
+        dueDate: new Date(currentDate.getTime() + 2 * oneDayMilliseconds).toLocaleDateString("en-CA"),
       },
     ].forEach(add);
   });
+
   test("Should add a new todo", () => {
     expect(all.length).toEqual(3);
 
