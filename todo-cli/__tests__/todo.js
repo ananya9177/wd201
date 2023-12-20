@@ -44,9 +44,9 @@ describe("Todo List Test Suite", () => {
   });
 
   test("Should mark a todo as complete", () => {
-    expect(all[0].completed).toEqual(false);
-    markAsComplete(0);
-    expect(all[0].completed).toEqual(true);
+    expect(all[1].completed).toEqual(false);
+    markAsComplete(1);
+    expect(all[1].completed).toEqual(true);
   });
 
   test("Should retrieve overdue items", () => {
