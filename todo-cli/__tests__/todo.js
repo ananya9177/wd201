@@ -3,18 +3,18 @@ const todoList = require("../todo");
 const { all, markAsComplete, add, overdue, dueToday, dueLater } = todoList();
 describe("Todo List Test Suite", () => {
   beforeAll(() => {
-    const today = new Date();
-    const day_ = 60 * 60 * 24 * 1000;
+    const todays_ = new Date();
+    const days_ = 60 * 60 * 24 * 1000;
     [
       {
         title: "do pupil 4th level",
         completed: false,
-        dueDate: new Date(today.getTime() - 2 * day_).toLocaleDateString("en-CA"),
+        dueDate: new Date(todays_.getTime() - 2 * days_).toLocaleDateString("en-CA"),
       },
       {
         title: "do laundry",
         completed: false,
-        dueDate: new Date(today.getTime() - day_).toLocaleDateString("en-CA"),
+        dueDate: new Date(todays_.getTime() - days_).toLocaleDateString("en-CA"),
       },
       {
         title: "complete javascript course",
@@ -24,9 +24,10 @@ describe("Todo List Test Suite", () => {
       {
         title: "orderin lunch",
         completed: false,
-        dueDate: new Date(today.getTime() + 2 * day_).toLocaleDateString(
+        dueDate: new Date(todays_.getTime() + 2 * days_).toLocaleDateString(
           "en-CA"
         ),
+      },
       
     ].forEach(add);
   });
