@@ -1,20 +1,36 @@
 const todoList = require("../todo");
 
-const { all, markAsComplete, add, overdue, dueToday, dueLater } = todoList();
+const {
+  all,
+  markAsComplete,
+  add,
+  overdue,
+  dueToday,
+  dueLater,
+} = todoList();
+
 describe("Todo List Test Suite", () => {
-  beforeAll(() => {
-    const todays_ = new Date();
-    const days_ = 60 * 60 * 24 * 1000;
+  beforeEach(() => {
+    const todaysDate = new Date();
+    const days = 60 * 60 * 24 * 1000;
+
+    // Reset todo list before each test
+    all.length = 0;
+
     [
       {
         title: "do pupil 4th level",
         completed: false,
-        dueDate: new Date(todays_.getTime() - 4 * days_).toLocaleDateString("en-CA"),
+        dueDate: new Date(todaysDate.getTime() - 4 * days).toLocaleDateString(
+          "en-CA"
+        ),
       },
       {
         title: "do laundry",
         completed: false,
-        dueDate: new Date(todays_.getTime() - 3 * days_).toLocaleDateString("en-CA"),
+        dueDate: new Date(todaysDate.getTime() - 3 * days).toLocaleDateString(
+          "en-CA"
+        ),
       },
       {
         title: "complete javascript course",
@@ -24,13 +40,13 @@ describe("Todo List Test Suite", () => {
       {
         title: "make a website from scratch",
         completed: false,
-        dueDate: new Date(todays_.getTime() + 3 * days_).toLocaleDateString(
+        dueDate: new Date(todaysDate.getTime() + 3 * days).toLocaleDateString(
           "en-CA"
         ),
       },
-      
     ].forEach(add);
   });
+
   test("Should add a new todo", () => {
     expect(all.length).toEqual(4);
 
@@ -61,3 +77,4 @@ describe("Todo List Test Suite", () => {
     expect(dueLater().length).toEqual(1);
   });
 });
+
