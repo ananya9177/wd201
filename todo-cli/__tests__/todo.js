@@ -11,46 +11,40 @@ const {
 
 describe("Todo List Test Suite", () => {
   beforeEach(() => {
-    const todaysDate = new Date();
-    const days = 60 * 60 * 24 * 1000;
+    const currentDate = new Date();
+    const oneDayInMilliseconds = 60 * 60 * 24 * 1000;
 
-    // Reset todo list before each test
-
-    [
+    const todos = [
       {
         title: "do pupil 4th level",
         completed: false,
-        dueDate: new Date(todaysDate.getTime() - 4 * days).toLocaleDateString(
-          "en-CA"
-        ),
+        dueDate: new Date(currentDate.getTime() - 4 * oneDayInMilliseconds).toLocaleDateString("en-CA"),
       },
       {
-        title: "do laundry",
+        title: "make christmas presents",
         completed: false,
-        dueDate: new Date(todaysDate.getTime() - 3 * days).toLocaleDateString(
-          "en-CA"
-        ),
+        dueDate: new Date(currentDate.getTime() - 3 * oneDayInMilliseconds).toLocaleDateString("en-CA"),
       },
       {
         title: "complete javascript course",
         completed: false,
-        dueDate: new Date().toLocaleDateString("en-CA"),
+        dueDate: currentDate.toLocaleDateString("en-CA"),
       },
       {
         title: "make a website from scratch",
         completed: false,
-        dueDate: new Date(todaysDate.getTime() + 3 * days).toLocaleDateString(
-          "en-CA"
-        ),
+        dueDate: new Date(currentDate.getTime() + 3 * oneDayInMilliseconds).toLocaleDateString("en-CA"),
       },
-    ].forEach(add);
+    ];
+
+    todos.forEach(add);
   });
 
   test("Should add a new todo", () => {
     expect(all.length).toEqual(4);
 
     add({
-      title: "A testcase",
+      title: "A items testcase",
       completed: false,
       dueDate: new Date().toLocaleDateString("en-CA"),
     });
@@ -76,4 +70,3 @@ describe("Todo List Test Suite", () => {
     expect(dueLater().length).toEqual(1);
   });
 });
-
