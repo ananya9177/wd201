@@ -15,7 +15,6 @@ describe("Todo List Test Suite", () => {
     const days = 60 * 60 * 24 * 1000;
 
     // Reset todo list before each test
-    all.length = 0;
 
     [
       {
