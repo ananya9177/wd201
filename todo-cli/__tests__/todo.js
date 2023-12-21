@@ -9,12 +9,12 @@ describe("Todo List Test Suite", () => {
       {
         title: "do pupil 4th level",
         completed: false,
-        dueDate: new Date(todays_.getTime() - 2 * days_).toLocaleDateString("en-CA"),
+        dueDate: new Date(todays_.getTime() - 4 * days_).toLocaleDateString("en-CA"),
       },
       {
         title: "do laundry",
         completed: false,
-        dueDate: new Date(todays_.getTime() - days_).toLocaleDateString("en-CA"),
+        dueDate: new Date(todays_.getTime() - 3 * days_).toLocaleDateString("en-CA"),
       },
       {
         title: "complete javascript course",
@@ -22,9 +22,9 @@ describe("Todo List Test Suite", () => {
         dueDate: new Date().toLocaleDateString("en-CA"),
       },
       {
-        title: "orderin lunch",
+        title: "make a website from scratch",
         completed: false,
-        dueDate: new Date(todays_.getTime() + 2 * days_).toLocaleDateString(
+        dueDate: new Date(todays_.getTime() + 3 * days_).toLocaleDateString(
           "en-CA"
         ),
       },
@@ -35,7 +35,7 @@ describe("Todo List Test Suite", () => {
     expect(all.length).toEqual(4);
 
     add({
-      title: "A test item",
+      title: "A testcase",
       completed: false,
       dueDate: new Date().toLocaleDateString("en-CA"),
     });
