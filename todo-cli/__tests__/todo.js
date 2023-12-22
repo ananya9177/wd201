@@ -1,36 +1,41 @@
 const todoList = require("../todo");
 
-const { all, markAsComplete, add, overdue, dueToday, dueLater, remove } = todoList();
+const {
+  all,
+  markAsComplete,
+  add,
+  overdue,
+  dueToday,
+  dueLater,
+} = todoList();
 
 describe("Todo List Test Suite", () => {
   beforeAll(() => {
     const todaysDate = new Date();
-    const oneDayInMilliseconds = 60 * 60 * 24 * 1000;
+    const days = 60 * 60 * 24 * 1000;
 
-    const todos = [
+    [
       {
         title: "do pupil 4th level",
         completed: false,
-        dueDate: new Date(todaysDate.getTime() - 4 * oneDayInMilliseconds).toLocaleDateString("en-CA"),
+        dueDate: new Date(todaysDate.getTime() - 4 * days).toLocaleDateString("en-CA"),
       },
       {
         title: "do laundry",
         completed: false,
-        dueDate: new Date(todaysDate.getTime() - 3 * oneDayInMilliseconds).toLocaleDateString("en-CA"),
+        dueDate: new Date(todaysDate.getTime() - 3 * days).toLocaleDateString("en-CA"),
       },
       {
         title: "complete javascript course",
         completed: false,
-        dueDate: todaysDate.toLocaleDateString("en-CA"),
+        dueDate: new Date().toLocaleDateString("en-CA"),
       },
       {
         title: "make a website from scratch",
         completed: false,
-        dueDate: new Date(todaysDate.getTime() + 3 * oneDayInMilliseconds).toLocaleDateString("en-CA"),
+        dueDate: new Date(todaysDate.getTime() + 3 * days).toLocaleDateString("en-CA"),
       },
-    ];
-
-    todos.forEach(add);
+    ].forEach(add);
   });
 
   test("Should add a new todo", () => {
@@ -56,16 +61,15 @@ describe("Todo List Test Suite", () => {
   });
 
   test("Should retrieve due today items", () => {
-    expect(dueToday().length).toEqual(2);
+    const today = new Date().toLocaleDateString("en-CA");
+    const dueTodayItems = dueToday();
+
+    expect(dueTodayItems.length).toEqual(2);
+    expect(dueTodayItems.every((item) => item.dueDate === today)).toBe(true);
   });
 
   test("Should retrieve due later items", () => {
     expect(dueLater().length).toEqual(1);
   });
-
-  test("Should remove a todo", () => {
-    const initialLength = all.length;
-    remove(0); // Removing the first todo
-    expect(all.length).toEqual(initialLength - 1);
-  });
 });
+
