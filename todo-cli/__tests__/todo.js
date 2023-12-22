@@ -1,6 +1,12 @@
 const todoList = require("../todo");
 
 const { all, markAsComplete, add, overdue, dueToday, dueLater } = todoList();
+
+const Jsdate = (days_) => {
+  if(!Number.isInteger(days_)){
+    throw new Error("pass an integer as days");
+
+    
 describe("Todo List Test Suite", () => {
   beforeAll(() => {
     const todays_ = new Date();
