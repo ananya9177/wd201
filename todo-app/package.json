@@ -16,7 +16,7 @@
         "prettier --write ."
       ]
     },
-    "author": "Aishwariyaa",
+    "author": "Ananya",
     "license": "ISC",
     "dependencies": {
       "bcrypt": "^5.1.0",
