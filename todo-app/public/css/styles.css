@@ -4,6 +4,11 @@ body{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+table{
+    width: 80%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
 .Todo-Item:hover .trash-icon{
     display: block;
 }
