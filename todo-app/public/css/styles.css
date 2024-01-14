@@ -1,13 +1,17 @@
-
-body{
+body {
     background-color: beige;
     color: black;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.Todo-Item:hover .trash-icon{
-    display: block;
+.Todo-Item .trash-icon {
+    display: none;
 }
- .flex-container {
-        display: flex;
-    }
+
+.Todo-Item:hover .trash-icon {
+    display: inline-block;
+}
+
+.flex-container {
+    display: flex;
+}
