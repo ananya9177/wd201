@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="./css/styles.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title> Todo Document</title>
 </head>
 <body>
-    <%- include('header.ejs') %>
-    <%- include('todos.ejs') %>
-    <%- include('footer.ejs') %>
+    <div class="'grid grid-cols-4">
+        <div class="col-start-1 col-span 1">
+            <%- include('header.ejs') %>
+            <br><br>
+            <%- include('todos.ejs') %>
 
+        </div>
+    </div>
     
 </body>
 </html>
+
+
+
+
