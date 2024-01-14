@@ -8,10 +8,17 @@ table{
     border-collapse: collapse;
     margin-bottom: 20px;
 }
-.trash-icon {
+ .trash-icon {
     display: none;
     cursor: pointer;
   }
-.Todo-Item:hover .trash-icon {
+
+  .Todo-Item:hover .trash-icon {
     display: inline-block;
   }
+
+  .trash-icon svg {
+    width: 0.5rem; /* Adjust the size as needed */
+    height: 0.5rem;
+  }
+</style>
