@@ -1,24 +1,14 @@
+
 body{
-    background-color: black;
-    color: white;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgb(164, 223, 242);
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
 }
 table{
     width: 80%;
     border-collapse: collapse;
     margin-bottom: 20px;
 }
- .trash-icon {
-    display: none;
-    cursor: pointer;
-  }
-
-  .Todo-Item:hover .trash-icon {
-    display: inline-block;
-  }
-
-  .trash-icon svg {
-    width: 0.5rem; /* Adjust the size as needed */
-    height: 0.5rem;
-  }
-
+.Todo-Item:hover .trash-icon{
+    display: block;
+}
