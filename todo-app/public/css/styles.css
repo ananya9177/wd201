@@ -8,6 +8,10 @@ table{
     border-collapse: collapse;
     margin-bottom: 20px;
 }
-.Todo-Item:hover .trash-icon{
-    display: block;
-}
+.trash-icon {
+    display: none;
+    cursor: pointer;
+  }
+.Todo-Item:hover .trash-icon {
+    display: inline-block;
+  }
