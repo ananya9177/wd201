@@ -7,10 +7,16 @@ body {
 .Todo-Item .trash-icon {
     display: none;
 }
-
 .Todo-Item:hover .trash-icon {
     display: inline-block;
 }
+
+.trash-icon svg {
+    width: 1rem; /* Adjust the size as needed */
+    height: 1rem;
+}
+
+
 
 .flex-container {
     display: flex;
