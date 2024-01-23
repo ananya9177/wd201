@@ -116,22 +116,6 @@ app.delete("/todos/:id", async function (request, response) {
   }
     
 
-   /* if (todo) {
-      await todo.destroy();
-      // Todo deleted successfully, respond with boolean true
-      return response.json(true);
-    } else {
-      // Todo not found, respond with boolean false
-      return response.json(false);
-    }
-  } catch (error) {
-    console.log(error);
-    return response.status(500).json(false); // Internal Server Error, respond with boolean false
-  */
-
-  // First, we have to query our database to delete a Todo by ID.
-  // Then, we have to respond back with true/false based on whether the Todo was deleted or not.
-  // response.send(true)
 });
 
 module.exports = app;
