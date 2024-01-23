@@ -41,7 +41,7 @@ app.get("/", async (request, response) =>{
 app.use(express.static(path.join(__dirname,'public')));
 app.get("/todos", async function (_request, response) {
   console.log("Processing list of all Todos ...");
-  onst allTodos = await Todo.getTodos();
+  const allTodos = await Todo.getTodos();
   const overdue_ = await Todo.overdue();
   const dueToday_ = await Todo.dueToday();
   const dueLater_ = await Todo.dueLater();
